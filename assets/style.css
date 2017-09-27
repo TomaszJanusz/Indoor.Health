@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #303030;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  color: #fdfdfd;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  position: absolute;
+  top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.app {
+  height: 50%;
+}
+
+#heart_svg {
+  fill: gray;
+}
+.app.app.active #heart_svg {
+  fill: red;
+}
+
+.app.active .vis {
+  animation: heartbeat 0s infinite;
+}
+.app.active + button {
+  display: none;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.2);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+button {
+  background: transparent;
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: #23e8ff;
+  border: #484949 1px solid;
+  padding: 15px 0 15px 0;
+  outline: none;
+}
+
+.battery:not(:empty):after {
+  content: "%";
+}
+
+.info {
+  display: flex;
+  font-size: 30px;
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.position:not(:empty):after {
+  content: ":";
+}
